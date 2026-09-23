@@ -16,7 +16,20 @@ let telaCheckout = false;
 let telaAdm = "produtos";
 
 /* ---------- Inicialização ---------- */
-
+function registrarPWA() {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("./service-worker.js")
+        .then(() => {
+          console.log("BOX74 PWA ativado.");
+        })
+        .catch((erro) => {
+          console.error("Erro ao ativar o PWA:", erro);
+        });
+    });
+  }
+}
 function configEhValida() {
   return (
     window.CONFIG &&
@@ -28,7 +41,8 @@ function configEhValida() {
 }
 
 async function iniciar() {
-  if (!configEhValida()) {
+ registrarPWA(); 
+   if (!configEhValida()) {
     raiz.innerHTML = `
       <div class="tela-login"><div class="cartao-login">
         <h1>Quase lá 🧴</h1>
