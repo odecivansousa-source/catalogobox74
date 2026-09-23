@@ -333,3 +333,179 @@ img { max-width: 100%; display: block; }
   .grade-2 { grid-template-columns: 1fr; }
   .painel-carrinho { max-width: 100%; }
 }
+/* =====================================================
+   BOX74 — AJUSTE MOBILE PREMIUM
+   ===================================================== */
+
+@media (max-width: 760px) {
+
+  html {
+    background: #f5fbf9;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Cabeçalho mais parecido com aplicativo */
+  .topo-loja {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .topo-loja-interno {
+    min-height: 62px;
+    padding: 8px 12px;
+  }
+
+  .marca-loja img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .marca-loja .titulo-marca {
+    font-size: 1.12rem;
+  }
+
+  /* Área principal */
+  .miolo-loja {
+    padding-top: 13px;
+    padding-bottom: 90px;
+  }
+
+  /* Produtos em duas colunas */
+  .grade-produtos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .cartao-produto {
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(14, 124, 123, 0.07);
+  }
+
+  .foto-produto {
+    aspect-ratio: 1 / 1;
+  }
+
+  .info-produto {
+    padding: 10px;
+  }
+
+  .info-produto .nome {
+    font-size: 0.82rem;
+    line-height: 1.25;
+  }
+
+  .info-produto .preco {
+    font-size: 1.05rem;
+  }
+
+  .linha-adicionar input {
+    width: 40px;
+    min-width: 40px;
+  }
+
+  .linha-adicionar .btn {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 0.70rem;
+  }
+
+  /* Abas horizontais */
+  .faixa-abas {
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 7px;
+  }
+
+  .aba-catalogo {
+    white-space: nowrap;
+  }
+
+  /* Carrinho */
+  .fundo-painel {
+    align-items: flex-end;
+  }
+
+  .painel-carrinho {
+    width: 100%;
+    max-width: 100%;
+    height: 92vh;
+    border-radius: 22px 22px 0 0;
+    padding: 20px 15px 30px;
+  }
+
+  /* Botão fechar */
+  .fechar-painel {
+    top: 14px;
+    right: 14px;
+  }
+
+  /* Modal */
+  .fundo-modal {
+    align-items: flex-end;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: 22px 22px 0 0;
+  }
+
+  /* Botões maiores para toque */
+  .btn {
+    min-height: 44px;
+  }
+
+  /* Formulários */
+  .campo input,
+  .campo textarea {
+    min-height: 46px;
+    font-size: 16px;
+  }
+}
+
+/* =====================================================
+   BOX74 — TELAS MUITO PEQUENAS
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+  .grade-produtos {
+    gap: 7px;
+  }
+
+  .miolo-loja {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .info-produto {
+    padding: 8px;
+  }
+
+  .info-produto .nome {
+    font-size: 0.77rem;
+  }
+
+  .info-produto .preco {
+    font-size: 0.98rem;
+  }
+
+  .linha-adicionar {
+    gap: 4px;
+  }
+
+  .linha-adicionar input {
+    width: 36px;
+    min-width: 36px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .linha-adicionar .btn {
+    font-size: 0.66rem;
+  }
+}
+
