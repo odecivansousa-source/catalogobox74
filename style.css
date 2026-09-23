@@ -294,7 +294,7 @@ img { max-width: 100%; display: block; }
 .tabela-adm { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; }
 .tabela-adm th { text-align: left; font-size: 0.74rem; text-transform: uppercase; color: var(--texto-suave); padding: 10px 12px; border-bottom: 1px solid var(--borda); }
 .tabela-adm td { padding: 10px 12px; border-bottom: 1px solid var(--borda); font-size: 0.88rem; vertical-align: middle; }
-.tabela-adm img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; background: var(--fundo); }
+.tabela-adm img { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; background: var(--fundo); }
 .envolucro-tabela { background: #fff; border: 1px solid var(--borda); border-radius: 12px; overflow: hidden; }
 .acoes-linha { display: flex; gap: 6px; justify-content: flex-end; }
 .acoes-linha button { background: none; border: 1px solid var(--borda); border-radius: 6px; padding: 5px 10px; font-size: 0.78rem; }
