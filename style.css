@@ -508,4 +508,90 @@ img { max-width: 100%; display: block; }
     font-size: 0.66rem;
   }
 }
+/* =====================================================
+   BOX74 — NAVEGAÇÃO MOBILE
+   ===================================================== */
 
+.barra-navegacao-mobile {
+  display: none;
+}
+
+@media (max-width: 760px) {
+
+  .barra-navegacao-mobile {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    height: 68px;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+
+    background: rgba(255, 255, 255, 0.97);
+    border-top: 1px solid rgba(14, 124, 123, 0.12);
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.08);
+
+    backdrop-filter: blur(12px);
+  }
+
+  .barra-navegacao-mobile button {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    border: 0;
+    background: transparent;
+    color: #60706d;
+
+    font-family: inherit;
+    cursor: pointer;
+
+    border-radius: 12px;
+  }
+
+  .barra-navegacao-mobile button span {
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .barra-navegacao-mobile button small {
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .barra-navegacao-mobile button:active {
+    transform: scale(0.94);
+  }
+
+  .barra-navegacao-mobile b {
+    position: absolute;
+    top: 4px;
+    right: 20%;
+
+    min-width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 4px;
+
+    border-radius: 999px;
+    background: #e53935;
+    color: #fff;
+
+    font-size: 0.62rem;
+    line-height: 1;
+  }
+}
