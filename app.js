@@ -147,6 +147,28 @@ function renderLoja() {
           : `<div class="grade-produtos">${listaFiltrada.map(cartaoProdutoHtml).join("")}</div>`
       }
     </div>
+    <nav class="barra-navegacao-mobile">
+  <button type="button" data-nav="inicio">
+    <span>🏠</span>
+    <small>Início</small>
+  </button>
+
+  <button type="button" data-nav="ofertas">
+    <span>🔥</span>
+    <small>Ofertas</small>
+  </button>
+
+  <button type="button" data-nav="carrinho">
+    <span>🛒</span>
+    <small>Carrinho</small>
+    ${carrinho.length ? `<b>${carrinho.reduce((s, i) => s + i.quantidade, 0)}</b>` : ""}
+  </button>
+
+  <button type="button" data-nav="admin">
+    <span>⚙️</span>
+    <small>Admin</small>
+  </button>
+</nav>
     ${carrinhoAberto ? htmlPainelCarrinho() : ""}
   `;
 
@@ -155,7 +177,34 @@ function renderLoja() {
   );
   document.getElementById("btn-abrir-carrinho").addEventListener("click", () => { carrinhoAberto = true; telaCheckout = false; renderLoja(); });
 
-  document.querySelectorAll("[data-add-carrinho]").forEach((el) =>
+document.querySelectorAll("[data-nav]").forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const destino = botao.dataset.nav;
+
+    if (destino === "inicio") {
+      abaLoja = "todos";
+      carrinhoAberto = false;
+      renderLoja();
+    }
+
+    if (destino === "ofertas") {
+      abaLoja = "ofertas";
+      carrinhoAberto = false;
+      renderLoja();
+    }
+
+    if (destino === "carrinho") {
+      carrinhoAberto = true;
+      telaCheckout = false;
+      renderLoja();
+    }
+
+    if (destino === "admin") {
+      location.hash = "admin";
+    }
+  });
+});  
+   document.querySelectorAll("[data-add-carrinho]").forEach((el) =>
     el.addEventListener("click", () => {
       const id = el.dataset.addCarrinho;
       const qtdInput = document.querySelector(`[data-qtd-input="${id}"]`);
