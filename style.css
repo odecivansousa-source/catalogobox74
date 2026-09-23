@@ -595,3 +595,28 @@ img { max-width: 100%; display: block; }
     line-height: 1;
   }
 }
+/* BOX74 — AÇÕES DO ADMIN NO CELULAR */
+
+@media (max-width: 760px) {
+
+  .envolucro-tabela {
+    overflow-x: auto;
+  }
+
+  .tabela-adm {
+    min-width: 760px;
+  }
+
+  .acoes-linha {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .acoes-linha button {
+    white-space: nowrap;
+    min-height: 40px;
+    padding: 7px 10px;
+  }
+}
